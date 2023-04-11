@@ -16,7 +16,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>{message || "Loading..."}</p>
         <p>
-          React, Express and MariaDB on Docker
+          React 17.0.2, Express 4.17.1 and MariaDB on Docker
         </p>
         <a
           className="App-link"
