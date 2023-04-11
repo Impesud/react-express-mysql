@@ -46,7 +46,7 @@ jobs:
       
       - name: Check linting and formatting
         # Custom script for checking the linting and formatting being in place
-        #uses: wearerequired/lint-action@v2.3.0
+        uses: wearerequired/lint-action@v2.3.0
 
       
       # Run test cases and this could ensure minimum coverage as well if set
