@@ -5,8 +5,7 @@ on:
     workflows: ["Continuous Integration (CI)"]
     # Execute the workflow once the CI workflow is completed on main branch.
     types: [completed]
-    branches:
-      - main
+    branches: [ "master" ]
 
 jobs:
   deploy:
