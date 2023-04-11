@@ -7,12 +7,8 @@ You can open this sample in the Dev Environments feature of Docker Desktop versi
 
 ### Status
 ![Workflow](https://github.com/Impesud/react-express-mysql/actions/workflows/CD.yml/badge.svg)
-// Example Workflow Badge Url:
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
 ![Workflow](https://github.com/Impesud/react-express-mysql/actions/workflows/CI.yml/badge.svg)
-// Example Workflow Badge Url:
-![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
 
 ### React application with a NodeJS backend and a MySQL database
 
