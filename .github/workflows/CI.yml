@@ -44,9 +44,6 @@ jobs:
       - name: Install package dependencies frontend
         run: npm install ./frontend
       
-      - name: npm init
-        run: npm init -y
-      
       - name: Check linting and formatting
         # Custom script for checking the linting and formatting being in place
         run: npm run lint 
