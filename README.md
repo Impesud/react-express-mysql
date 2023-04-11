@@ -5,6 +5,15 @@
 You can open this sample in the Dev Environments feature of Docker Desktop version 4.12 or later.
 [Open in Docker Dev Environments](https://open.docker.com/dashboard/dev-envs?url=https://github.com/docker/awesome-compose/tree/master/react-express-mysql)
 
+### Status
+![Workflow](https://github.com/Impesud/react-express-mysql/actions/workflows/CD.yml/badge.svg)
+// Example Workflow Badge Url:
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
+![Workflow](https://github.com/Impesud/react-express-mysql/actions/workflows/CI.yml/badge.svg)
+// Example Workflow Badge Url:
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
+
 ### React application with a NodeJS backend and a MySQL database
 
 Project structure:
