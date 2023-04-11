@@ -38,8 +38,11 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
        
-      - name: Install package dependencies
-        run: npm install
+      - name: Install package dependencies backend
+        run: npm install ./backend
+
+      - name: Install package dependencies frontend
+        run: npm install ./frontend
       
       - name: npm init
         run: npm init -y
