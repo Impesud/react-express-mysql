@@ -51,8 +51,8 @@ jobs:
       
       # Run test cases and this could ensure minimum coverage as well if set
       - name: Create test build
-        run: npm --prefix ./frontend/src run build 
+        run: npm --prefix ./frontend run build 
 
       - name: Execute test cases
-        run: npm --prefix ./frontend/src run test
+        run: npm --prefix ./frontend run test
         
