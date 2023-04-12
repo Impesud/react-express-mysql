@@ -43,7 +43,7 @@ jobs:
 
       - name: Deploy the app
         # This assumes that there is deploy script, change as required
-        run: npm run deploy
+        run: npm --prefix ./frontend run deploy
         # Environment secrets, generally stored in Github Secrets (un-comment as required)
         env:
           deployment_token: ${{ secrets.ACTIONS_DEPLOYMENT_TOKEN }}
