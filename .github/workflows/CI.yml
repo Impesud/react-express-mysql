@@ -22,7 +22,6 @@ jobs:
         uses: actions/setup-node@v3
         with:
             node-version: ${{ matrix.node-version }}
-      - run: npm ci
         
       # Consider this as an add on to optimize the execution of actions
       - name: Cache node modules
@@ -48,7 +47,7 @@ jobs:
       #- name: Check linting and formatting
         # Custom script for checking the linting and formatting being in place
       #  uses: wearerequired/lint-action@v2.3.0
-
+      - run: npm ci
       
       # Run test cases and this could ensure minimum coverage as well if set.
       - name: Create test build
