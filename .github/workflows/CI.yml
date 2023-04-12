@@ -11,16 +11,16 @@ jobs:
     # Defines the type of runner the job runs on
     runs-on: ubuntu-latest
 
-  strategy:
+    strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [16.x, 18.x, 19.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node-version }}
-          uses: actions/setup-node@v3
-          with:
+        uses: actions/setup-node@v3
+        with:
             node-version: ${{ matrix.node-version }}
         
       # Consider this as an add on to optimize the execution of actions
@@ -47,12 +47,12 @@ jobs:
       #- name: Check linting and formatting
         # Custom script for checking the linting and formatting being in place
       #  uses: wearerequired/lint-action@v2.3.0
-
+      - run: npm ci
       
       # Run test cases and this could ensure minimum coverage as well if set
       - name: Create test build
-        run: npm run build
+        run: npm --prefix ./frontend run build 
 
       - name: Execute test cases
-        run: npm run test
+        run: npm --prefix ./frontend run test
         
