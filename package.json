@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "lint": "^0.8.19"
+  },
+  "devDependencies": {
+    "react-scripts": "^5.0.1"
   }
 }
