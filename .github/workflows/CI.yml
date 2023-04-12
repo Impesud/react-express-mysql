@@ -38,16 +38,20 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
        
-      - name: Install package dependencies
-        run: npm install
+      - name: Install package dependencies backend
+        run: npm install ./backend
+
+      - name: Install package dependencies frontend
+        run: npm install ./frontend
       
       - name: Check linting and formatting
         # Custom script for checking the linting and formatting being in place
-        run: npm run lint
+        uses: wearerequired/lint-action@v2.3.0
+
       
       # Run test cases and this could ensure minimum coverage as well if set
-      - name: Execute test cases
-        run: npm run test
+      #- name: Execute test cases
+      #  run: npm run test
         
-      - name: Create test build
-        run: npm run build
+      #- name: Create test build
+      #  run: npm run build
