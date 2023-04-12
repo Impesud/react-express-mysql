@@ -49,7 +49,7 @@ jobs:
       #  uses: wearerequired/lint-action@v2.3.0
 
       
-      # Run test cases and this could ensure minimum coverage as well if set
+      # Run test cases and this could ensure minimum coverage as well if set.
       - name: Create test build
         run: npm --prefix ./frontend run build 
 
