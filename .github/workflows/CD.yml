@@ -12,15 +12,17 @@ jobs:
     # Defines the type of runner the job runs on
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout to the repository
-        uses: actions/checkout@v2
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 19.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
-      - name: Set up NodeJS environment
-        uses: actions/setup-node@v2
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          # Reads the node version from the .nvmrc file itself
-          node-version-file: '.nvmrc'
+            node-version: ${{ matrix.node-version }}
 
       # Consider this as an add on to optimize the execution of actions
       - name: Cache node modules
@@ -43,5 +45,5 @@ jobs:
         # This assumes that there is deploy script, change as required
         run: npm run deploy
         # Environment secrets, generally stored in Github Secrets (un-comment as required)
-        # env:
-          # deployment_token: ${{ secrets.ACTIONS_DEPLOYMENT_TOKEN }}
+        env:
+          deployment_token: ${{ secrets.ACTIONS_DEPLOYMENT_TOKEN }}
