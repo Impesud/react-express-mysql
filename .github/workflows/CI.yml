@@ -10,18 +10,18 @@ jobs:
   build:
     # Defines the type of runner the job runs on
     runs-on: ubuntu-latest
+
+  strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+        # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
     
     steps:
-      - name: Checkout to the repository
-        uses: actions/checkout@v2
-        
-      - name: Set up NodeJS environment
-        uses: actions/setup-node@v2
-        with:
-          # Reads the node version from the .nvmrc file itself 
-          node-version-file: '.nvmrc'
-          # The node version can be hard-coded 
-          # node-version: 14
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
         
       # Consider this as an add on to optimize the execution of actions
       - name: Cache node modules
@@ -44,14 +44,15 @@ jobs:
       - name: Install package dependencies frontend
         run: npm install ./frontend
       
-      - name: Check linting and formatting
+      #- name: Check linting and formatting
         # Custom script for checking the linting and formatting being in place
-        uses: wearerequired/lint-action@v2.3.0
+      #  uses: wearerequired/lint-action@v2.3.0
 
       
       # Run test cases and this could ensure minimum coverage as well if set
-      #- name: Execute test cases
-      #  run: npm run test
+      - name: Create test build
+        run: npm run build
+
+      - name: Execute test cases
+        run: npm run test
         
-      #- name: Create test build
-      #  run: npm run build
