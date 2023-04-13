@@ -39,10 +39,7 @@ FROM development as dev-envs
 #apt-get install -y --no-install-recommends git
 #EOF
 
-RUN <<EOF
-yum update \
-yum install -y --no-install-recommends git \
-EOF
+RUN apt-get update && apt-get install -y --no-install-recommends git
 
 RUN <<EOF
 useradd -s /bin/bash -m vscode
