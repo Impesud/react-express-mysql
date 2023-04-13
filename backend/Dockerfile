@@ -40,8 +40,8 @@ FROM development as dev-envs
 #EOF
 
 RUN <<EOF
-yum update
-yum install -y --no-install-recommends git
+yum update \
+yum install -y --no-install-recommends git \
 EOF
 
 RUN <<EOF
