@@ -33,9 +33,15 @@ COPY . /code
 CMD [ "node", "src/index.js" ]
 
 FROM development as dev-envs
+# update for work in other distribution
+#RUN <<EOF
+#apt-get update
+#apt-get install -y --no-install-recommends git
+#EOF
+
 RUN <<EOF
-apt-get update
-apt-get install -y --no-install-recommends git
+yum update
+yum install -y --no-install-recommends git
 EOF
 
 RUN <<EOF
