@@ -49,7 +49,7 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr-public.outputs.registry }}
         ECR_REPOSITORY: ${{ env.ECR_REPOSITORY }}
-        ECR_REGISTRY_ALIAS: impesud-registry
+        ECR_REGISTRY_ALIAS: l7v3h1w3
         IMAGE_TAG: ${{ github.sha }}
       run: |
         # Build a docker container and
