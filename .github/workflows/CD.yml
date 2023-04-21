@@ -55,10 +55,10 @@ jobs:
         # push it to ECR so that it can
         # be deployed to ECS.
         docker compose up -d
-        docker image tag react-express-mysql-backend:latest  $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:latest
+        docker image tag react-express-mysql-backend:latest  $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:backend_latest
         docker image push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:backend_latest
         echo "image-backend=$ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:backend_latest" >> $GITHUB_OUTPUT
-        docker image tag react-express-mysql-frontend:latest  $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:latest
+        docker image tag react-express-mysql-frontend:latest  $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:frontend:_latest
         docker image push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:frontend_latest
         echo "image-frontend=$ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:frontend_latest" >> $GITHUB_OUTPUT
         docker compose down
