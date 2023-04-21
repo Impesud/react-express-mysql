@@ -55,24 +55,10 @@ jobs:
         # Build a docker container and
         # push it to ECR so that it can
         # be deployed to ECS.
-        #docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG -f backend/Dockerfile .
-        #docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        #echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
-        #docker build -t $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:$IMAGE_TAG -f backend/Dockerfile .
-        #docker-compose build $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:$IMAGE_TAG
         docker compose up -d
-        docker compose images
         docker image tag react-express-mysql-backend:latest  $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:latest
         docker image push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:latest
-        #docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:react-express-mysql-frontend 
-        #docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:mariadb
-        #docker-compose push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:backend
-        #docker-compose push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:db
-        #docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:$IMAGE_TAG
-        #docker-compose push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:frontend
-        #docker-compose push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:backend
-        #docker-compose push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:db
-        #echo "image=$ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_OUTPUT
+        echo "image-backend=$ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:latest" >> $GITHUB_OUTPUT
         docker compose down
 
     - name: Fill in the new image ID in the Amazon ECS task definition
@@ -81,7 +67,7 @@ jobs:
       with:
         task-definition: ${{ env.ECS_TASK_DEFINITION }}
         container-name: ${{ env.CONTAINER_NAME }}
-        image: ${{ steps.build-image.outputs.image }}
+        image: ${{ steps.build-image.outputs.image-backend }}
 
     - name: Deploy Amazon ECS task definition
       uses: aws-actions/amazon-ecs-deploy-task-definition@v1
