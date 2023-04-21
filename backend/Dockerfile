@@ -34,13 +34,7 @@ CMD [ "node", "src/index.js" ]
 
 FROM development as dev-envs
 # update for work in other distribution
-#RUN <<EOF
-#apt-get update
-#apt-get install -y --no-install-recommends git
-#EOF
-
 RUN apt-get update && apt-get install -y --no-install-recommends git
-
 RUN useradd -s /bin/bash -m vscode && groupadd docker && usermod -aG docker vscode
 
 # install Docker tools (cli, buildx, compose)
