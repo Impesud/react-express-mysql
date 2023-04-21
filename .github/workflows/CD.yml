@@ -62,9 +62,9 @@ jobs:
         #docker-compose build $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:$IMAGE_TAG
         docker compose up -d
         docker compose images
-        docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:025e7aca0138 
-        docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:0937e25ef8bd 
-        docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:12e05d5da3c5 
+        docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:react-express-mysql-backend
+        docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:react-express-mysql-frontend 
+        docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:mariadb
         #docker-compose push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:backend
         #docker-compose push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:db
         #docker push $ECR_REGISTRY/$ECR_REGISTRY_ALIAS/$ECR_REPOSITORY:$IMAGE_TAG
