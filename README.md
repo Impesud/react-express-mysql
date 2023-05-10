@@ -1,9 +1,9 @@
-## Compose applications on Docker and AWS
+## Compose application on Docker and AWS
 
 ### Use it locally and/or on Docker Dev Environments and deploy on AWS
 
 You can open this sample in the Dev Environments feature of Docker Desktop version 4.12 or later.
-[Open in Docker Dev Environments](https://open.docker.com/dashboard/dev-envs?url=https://github.com/Impesud/react-express-mysql/tree/master/react-express-mysql)
+[Open in Docker Dev Environments](https://open.docker.com/dashboard/dev-envs?url=https://github.com/Impesud/react-express-mysql/tree/master/)
 
 This application has been tested up to Docker Desktop version 4.18
 
