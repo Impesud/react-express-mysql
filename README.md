@@ -7,6 +7,10 @@ You can open this sample in the Dev Environments feature of Docker Desktop versi
 
 This application has been tested up to Docker Desktop version 4.18
 
+> ℹ️ **_INFO_**  
+> In setting up all this procedure, I had to face several problems, finding and testing different solutions, both at the code level, 
+> and also with Github Actions and AWS. For any question or doubt, do not hesitate to leave us your "Issue" in the dedicated section.
+
 ### Status
 ![Workflow](https://github.com/Impesud/react-express-mysql/actions/workflows/CD.yml/badge.svg)
 
