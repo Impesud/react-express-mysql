@@ -11,7 +11,7 @@ env:
   AWS_REGION: us-east-1                             # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: impesud                           # set this to your Amazon ECR repository name
   ECS_SERVICE: impesud-service-1                    # set this to your Amazon ECS service name
-  ECS_CLUSTER: impesud-cluster                      # set this to your Amazon ECS cluster name
+  ECS_CLUSTER: impesud-cluster-1                      # set this to your Amazon ECS cluster name
   ECS_TASK_DEFINITION: .aws/impesud-revision1.json  # set this to the path to your Amazon ECS task definition
                                                     # file, e.g. .aws/impesud-revision1.json
   CONTAINER_NAME: rem                               # set this to the name of the container in the
